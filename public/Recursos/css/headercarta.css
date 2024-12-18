@@ -1,0 +1,159 @@
+
+
+/* Estilos del menú independiente */
+.custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #000000;
+    position: fixed; /* Menú fijo */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    margin: 0; /* Sin márgenes */
+    border-bottom: 2px solid rgb(60, 60, 60); 
+}
+
+.custom-logo img {
+    height: 60px;
+    width: 400px;
+}
+
+.custom-menu {
+    display: flex;
+    margin: 0; /* Sin márgenes */
+}
+
+.custom-menu-btn {
+    margin-left: 25px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 25px; /* Aumentar el tamaño del texto */
+    margin-right: 40px;
+}
+
+.custom-menu-btn::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: #ff7c39;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -21.5px; /* Línea más abajo */
+    left: 0;
+}
+
+.custom-fixed-line {
+    color: #ff7c39; /* Texto azul fijo */
+}
+
+.custom-menu-btn:hover {
+    color: #ff7c39;
+}
+
+.custom-menu-btn:hover::after {
+    width: 100%;
+}
+
+/* Mantener la línea fija solo en "Página 1" */
+.custom-fixed-line::after {
+    width: 100%; /* Línea completa siempre visible */
+}
+
+/* Estilo para el contenido principal */
+main {
+    padding-top: 100px; /* Evitar que el contenido quede detrás del menú */
+}
+
+.dropdown {
+    position: relative;
+    margin-top: 10px;
+}
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 120%; /* Aparece justo debajo del botón */
+    left: 0;
+    background-color: #cacaca;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    z-index: 1;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: rgb(11, 11, 11);
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #d46013;
+}
+
+/* Animación de deslizamiento suave para el menú desplegable */
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+
+
+/* Media queries para hacer el menú responsivo */
+
+/* Tablet - pantallas medianas */
+@media (max-width: 768px) {
+    .custom-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .custom-logo img {
+        margin-bottom: 10px;
+    }
+
+    .custom-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .custom-menu-btn {
+        margin: 10px 0;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* Móviles - pantallas pequeñas */
+@media (max-width: 480px) {
+    .custom-header {
+        padding: 10px 20px;
+    }
+
+    .custom-menu-btn {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .custom-logo img {
+        height: 50px;
+    }
+}   

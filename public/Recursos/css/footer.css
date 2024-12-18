@@ -1,0 +1,60 @@
+/* Encapsulación del footer para evitar conflictos con otros estilos */
+.normal-footer {
+    background-color: #000000;
+    color: white;
+    font-size: 25px;
+    padding: 20px 0;
+    width: 100%;
+    border-top: 5px solid white; 
+}
+
+.normal-footer .footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.normal-footer .footer-logo img {
+    width: 280px; /* Ajusta el tamaño del logo */
+}
+
+.normal-footer .footer-address, .normal-footer .footer-contact {
+    text-align: left;
+    margin: 0 15px; /* Añade márgenes para que no estén pegados */
+}
+
+.normal-footer h4 {
+    margin-bottom: 5px;
+}
+
+.normal-footer p {
+    margin: 3px 0;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .normal-footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .normal-footer .footer-logo img {
+        margin-bottom: 15px;
+    }
+}
+
+/* Hacer que el contenido ocupe todo el espacio disponible para empujar el footer al final */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    min-height: 100vh; /* Hace que el contenido principal ocupe al menos el 100% de la ventana */
+    padding-bottom: 50px; /* Espacio para asegurar que el footer no esté pegado al contenido */
+    box-sizing: border-box;
+}

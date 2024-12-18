@@ -1,0 +1,105 @@
+        /* Contenedor principal */
+        body {
+            background-image: url('../img/dire.jpg'); /* Imagen de fondo */
+            background-size: cover;
+        }
+        .section-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%; /* Ajusta el ancho del contenedor */
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-size: cover;
+            background-position: center;
+            margin: 20px auto; /* Centrado horizontal y espacio de márgenes */
+        }
+
+        /* Ajuste de márgenes generales */
+        .section-container.custom-margins {
+            margin-top: 130px; /* Ejemplo de margen ajustable */
+        }
+
+        /* Contenedor general centrado */
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Centrado vertical en pantalla completa */
+        }
+
+        /* Sección izquierda (imagen) */
+        .section-left {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-left img {
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Sección derecha (texto + botón WhatsApp) */
+        .section-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .section-right p {
+            font-size: 50px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo del botón de WhatsApp */
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            animation: pump 1s infinite; /* Efecto de bombeo continuo */
+        }
+
+        .whatsapp-button:hover {
+            background-color: #20b358; /* Cambia de color al pasar el mouse */
+        }
+
+        /* Icono de WhatsApp */
+        .whatsapp-button img {
+            width: 30px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        /* Efecto de bombeo (latido de corazón) */
+        @keyframes pump {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1); /* Aumenta el tamaño temporalmente */
+            }
+        }
+
+        /* Contenedor para ocultar el desbordamiento */
+
+
+
+  

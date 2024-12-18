@@ -1,0 +1,30 @@
+.h1-title {
+    @extend .h1;
+    text-shadow: 2px 2px 0px #000000;
+}
+.bg-ginda{
+    background: #5c0557;
+}
+.bg-ginda-light{
+    background: #a3139c;
+}
+.nav-link :hover{
+    text-decoration: underline;
+}
+
+.bg-wine {
+    background-color: #6c0e2d;
+}
+
+.link-a {
+    color:#000000;
+}
+
+.link-a:hover {
+    color: #5c0557;
+    text-decoration: none;
+}
+
+@media (min-width: 768px){
+    
+}

@@ -1,0 +1,44 @@
+/* Dropdown - Menú desplegable */
+.dropdown {
+    position: relative;
+    margin-top: 10px;
+}
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 120%; /* Aparece justo debajo del botón */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.573);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    z-index: 1; 
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #ed641fb4;
+}
+
+/* Animación de deslizamiento suave para el menú desplegable */
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}

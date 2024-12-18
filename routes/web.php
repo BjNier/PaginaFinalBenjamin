@@ -27,3 +27,9 @@ Route::get('/promociones', function () {
 Route::get('/delivery', function () {
     return view('delivery.index'); 
 })->name('delivery.index');
+
+Route::get('/carta', function () { 
+    return view('CartaAmazonas632Benjamin'); // Nombre del archivo sin .blade.php
+})->name('carta');
+
+

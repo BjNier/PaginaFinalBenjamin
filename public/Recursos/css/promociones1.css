@@ -1,0 +1,234 @@
+/* Estilos generales para toda la página */
+body {
+    background-color:  rgba(0, 0, 0, 0.695);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Encapsulación de la sección independiente */
+.independent-section {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow: hidden; /* Evita scroll innecesario */
+    margin-top: 90px;
+}
+
+.independent-section .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 750px;
+    scroll-snap-align: start;
+    opacity: 0;
+    transform: translateY(50px);
+    position: relative;
+}
+
+/* Imagen de fondo en la sección */
+.independent-section .section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* Asignar diferentes imágenes de fondo a cada sección */
+.independent-section .section:nth-child(1)::before {
+    background-image: url('../img/f1.jpg');
+}
+.independent-section .section:nth-child(2)::before {
+    background-image: url('../img/f2.jpg');
+}
+.independent-section .section:nth-child(3)::before {
+    background-image: url('../img/f3.jpg');
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Imagenes */
+.independent-section .image-container {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* Imagen sin distorsión */
+.independent-section .image-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Imagen con overlay y texto */
+.independent-section .image-right-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.475);
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+}
+
+/* Texto en overlay */
+.independent-section .overlay-content h1 {
+    margin-bottom: 10px;
+    font-size: 4rem;
+}
+
+.independent-section .overlay-content p {
+    font-size: 2rem;
+}
+
+/* Alternancia entre las secciones */
+.independent-section .section:nth-child(even) .image-container-left {
+    order: 2;
+}
+
+.independent-section .section:nth-child(even) .image-container-right {
+    order: 1;
+}
+
+/* Activa la animación cuando la clase .visible esté presente */
+.independent-section .visible {
+    opacity: 1;
+    animation: fadeInUp 0.8s forwards;
+}
+
+.independent-section .visible .image-left img {
+    animation: slideInFromLeft 1s forwards;
+}
+
+.independent-section .visible .image-right-overlay {
+    animation: slideInFromRight 1s forwards;
+}
+
+.independent-section .visible .overlay-content h1 {
+    animation: fadeInUp 1.2s forwards;
+}
+
+.independent-section .visible .overlay-content p {
+    animation: fadeInUp 1.4s forwards;
+}
+
+/* Dropdown - Menú desplegable */
+.dropdown {
+    position: relative;
+    margin-top: 10px;
+}
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 120%; /* Aparece justo debajo del botón */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.573);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    z-index: 1; 
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #ed641fb4;
+}
+
+/* Animación de deslizamiento suave para el menú desplegable */
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+
+.independent-section .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #d35400; /* Naranja oscuro */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    animation: blinkUpDown 1.5s infinite; /* Efecto de parpadeo con movimiento vertical */
+}
+
+/* Animación de parpadeo con movimiento de arriba a abajo */
+@keyframes blinkUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); /* Movimiento hacia arriba */
+    }
+}
+
+.independent-section .btn:hover {
+    background-color: #e67e22; /* Naranja ligeramente más claro al pasar el mouse */
+}
+
+
